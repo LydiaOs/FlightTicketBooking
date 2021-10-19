@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+@Data
 @Entity
 @Table(name = "schedule")
 public class Schedule {
@@ -23,9 +25,9 @@ public class Schedule {
 
 	@Column(name = "departure_date")
 //	@JsonFormat(pattern = "mm-dd-yyyy HH:mm:ss")
-	private String deptDateTime;
+	private String DepartureDateTime;
 
 	@Column(name = "arrival_date")
 //	@JsonFormat(pattern = "mm-dd-yyyy HH:mm:ss")
-	private String arrDateTime;
+	private String ArrivalDateTime;
 }

@@ -6,12 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+import lombok.Data;
+@Data
 @Entity
 public class Booking {
 	@Id
 	// @GeneratedValue(strategy=GenerationType.AUTO)
-	private BigInteger bookingId;
+	private int bookingId;
 	private String bookingDate;
 	private String From;
 	private String To;
@@ -19,7 +22,10 @@ public class Booking {
 	
 	private MealType MealType;
 	private String DiscountCode;
-	private int SeatNoOnward;
-	private int SeatNoReturn;
-	private Seat SeatType;
+	@OneToOne
+	private Seat seat;
+	@OneToOne
+	private Passenger passenger;
+	
+	
 }

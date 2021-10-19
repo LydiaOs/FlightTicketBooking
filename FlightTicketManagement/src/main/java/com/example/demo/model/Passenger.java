@@ -6,28 +6,24 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 import lombok.Data;
 
 @Entity
 @Data
-public class Seat {
+public class Passenger {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int SeatId;
-
+	private int passengerId;
+	private String passengerName;
+	private int passengerContactNumber;
+	private int passengerAge;
+	private String passengerAddress;
 	
 	@Enumerated(EnumType.STRING)
-	private Coach coach;
+	private Gender gender;
 	
-	@Enumerated(EnumType.STRING)
 	
-	private OnSeat SeatNoOnward;
-	@Enumerated(EnumType.STRING)
-	private RetSeat SeatNoReturn;
 	
-	@OneToOne
-	private Flight flight;
 
 }

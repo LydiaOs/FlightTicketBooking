@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import lombok.Data;
+@Data
 @Entity
 public class Flight {
 
@@ -13,4 +15,6 @@ public class Flight {
 	private String carrierName;
 	private String flightModel;
 	private int seatCapacity;
+	private String Source;
+	private String Destination;
 }
