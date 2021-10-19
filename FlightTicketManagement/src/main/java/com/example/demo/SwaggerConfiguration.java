@@ -30,42 +30,23 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 //@EnableSwagger2
-public class SwaggerConfiguration {
-	private static final String BASIC_AUTH = "basicAuth";
+public class SwaggerConfiguration {	  @Bean
+    public Docket api() {
+    return new Docket(DocumentationType.OAS_30)
+            .select()
+            .apis(RequestHandlerSelectors.basePackage("com.example.demo"))
+            .paths(PathSelectors.any())
+            .build().apiInfo(apiEndPointInfo());
+    
+}
+public ApiInfo apiEndPointInfo() {
+    return new ApiInfoBuilder().title("Online Flight Ticket Booking")
+            .description("Book your flight")
+            .licenseUrl("http://www.apache.org/licenses/LICENCE-2.0.html")
+            .version("0.0.1-SNAPSHOT")
+            .build();
+}
 	
-	@Bean
-  public Docket api(){
-		HttpAuthenticationScheme authenticationScheme = HttpAuthenticationScheme
-	            .BASIC_AUTH_BUILDER
-	            .name("Basic Authentication")
-	            .build();
-		        return new Docket(DocumentationType.OAS_30)
-		                .select()
-		                .apis(RequestHandlerSelectors.basePackage("com.example.demo"))
-		                .paths(PathSelectors.any())
-		                .build().apiInfo(apiEndPointInfo())
-		                .securitySchemes(Collections.singletonList(authenticationScheme))
-		                //.securitySchemes(securitySchemes())
-		                .securityContexts(List.of(securityContext()));
-		        
-		    }
-		    public ApiInfo apiEndPointInfo() {
-		        return new ApiInfoBuilder().title("Online Flight Ticket Booking")
-		                .description("Book your flight")
-		                .licenseUrl("http://www.apache.org/licenses/LICENCE-2.0.html")
-		                .version("0.0.1-SNAPSHOT")
-		                .build();
-		    }
-		    private List<SecurityScheme> securitySchemes() {
-		        return List.of(new BasicAuth(BASIC_AUTH));
-		    }
 
-		    private SecurityContext securityContext() {
-		        return SecurityContext.builder().securityReferences(Arrays.asList(basicAuthReference())).build();
-		    }
-
-		    private SecurityReference basicAuthReference() {
-		        return new SecurityReference(BASIC_AUTH, new AuthorizationScope[0]);
-		    }
 
 }
