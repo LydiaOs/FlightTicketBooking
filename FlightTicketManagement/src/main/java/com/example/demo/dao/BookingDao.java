@@ -10,6 +10,6 @@ import com.example.demo.model.Booking;
 
 
 @Repository
-public interface BookingDao extends CrudRepository<Booking, Integer> {
+public interface BookingDao extends CrudRepository<Booking, BigInteger> {
 
 }
