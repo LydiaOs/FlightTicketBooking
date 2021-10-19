@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -13,8 +15,8 @@ import lombok.Data;
 @Entity
 public class Booking {
 	@Id
-	// @GeneratedValue(strategy=GenerationType.AUTO)
-	private int bookingId;
+	 @GeneratedValue(strategy=GenerationType.AUTO)
+	private BigInteger bookingId;
 	private String bookingDate;
 	private String From;
 	private String To;
