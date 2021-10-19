@@ -14,9 +14,9 @@ public interface BookingService {
 
 	public Booking updateBooking(Booking newBooking);
 
-	public String deleteBooking(int bookingId);
+	public String deleteBooking(BigInteger bookingId);
 
 	public Iterable<Booking> displayAllBooking();
 
-	public ResponseEntity<?> findBookingById(int bookingId);
+	public ResponseEntity<?> findBookingById(BigInteger bookingId);
 }

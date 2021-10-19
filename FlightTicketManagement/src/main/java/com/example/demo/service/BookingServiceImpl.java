@@ -53,7 +53,7 @@ public class BookingServiceImpl implements BookingService {
 	 */
 
 	@Override
-	public String deleteBooking(int bookingId) {
+	public String deleteBooking(BigInteger bookingId) {
 
 		Optional<Booking> findBookingById = bookingDao.findById(bookingId);
 		if (findBookingById.isPresent()) {
@@ -81,7 +81,7 @@ public class BookingServiceImpl implements BookingService {
 	 * find booking by ID
 	 */
 	@Override
-	public ResponseEntity<?> findBookingById(int bookingId) {
+	public ResponseEntity<?> findBookingById(BigInteger bookingId) {
 		Optional<Booking> findById = bookingDao.findById(bookingId);
 		
 			if (findById.isPresent()) {
