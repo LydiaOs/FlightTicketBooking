@@ -30,9 +30,21 @@ The Flight Reservation System can be accessed by two categories of users: Custom
 1. Users can search available flights.
 1. Users can make a booking, view current bookings, and modify and cancel a booking, if needed. 
 1. Users can see airport details for the airlines associated with their flight(s). 
+1. User are able to select a specific Flight
+and go ahead and complete Ticket Booking by providing below
+details
+ Select a specific seat.
+ Opt for Meal(Veg/Non veg), it may be possible that some
+Flights do not offer Meal.
+ Apply Discount Coupon code
+ Select Seat Number(s)
 #### Features for Administrators
-1. Administrators can view all details for flights, schedules, and routes.  
-1. Administrators can add, modify, and cancel flights, schedules, and routes.  
+1. Admin shall be able to login/logout.
+1. There can be pre-defined username/password for Admin.
+1. Admin can view all details for flights, schedules, and routes.  
+1. Admin can add, modify, and cancel flights, schedules, and routes.  
+1. Admin shall be able to Block an Airline.
+1. Admin shall be able to list, add, update, delete Discount coupons.
 
 
 
